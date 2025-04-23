@@ -1,5 +1,6 @@
 ## EX. NO: 1(A) : IMPLEMENTATION OF CAESAR CIPHER
- 
+## NAME: AMIRTHAVARSHINI V
+## REG NO: 212223040014
 
 ## AIM:
 
@@ -27,8 +28,43 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-5: Display the cipher text obtained above.
 
 
-PROGRAM :-
+## PROGRAM :-
+```
+# A Python program to illustrate Caesar Cipher Technique
+
+def encrypt(text, s):
+    result = ""
+
+    # Traverse the text
+    for i in range(len(text)):
+        char = text[i]
+
+        # Encrypt uppercase characters
+        if char.isupper():
+            result += chr((ord(char) + s - 65) % 26 + 65)
+
+        # Encrypt lowercase characters
+        elif char.islower():
+            result += chr((ord(char) + s - 97) % 26 + 97)
+        
+        # Keep non-alphabetic characters unchanged
+        else:
+            result += char
+
+    return result
+
+text = input("Enter the text: ")
+s = int(input("Enter the shift value: "))
+
+print("Text  : " + text)
+print("Shift : " + str(s))
+print("Cipher: " + encrypt(text, s))
+```
+
+## OUTPUT :-
+![image](https://github.com/user-attachments/assets/3cb97dde-e5b1-41bb-8f56-fe4328739bf4)
 
 
+## Result:
+Thus To implement the simple substitution technique using Caesar cipher has been executed successfully.
 
-OUTPUT :-
